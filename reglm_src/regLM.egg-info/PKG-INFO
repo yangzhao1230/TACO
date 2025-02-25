@@ -1,0 +1,60 @@
+Metadata-Version: 2.1
+Name: regLM
+Version: 0.0.post1.dev60+ge201547.d20240725
+Summary: Add a short description here!
+Home-page: https://https://github.com/Genentech/regLM
+Author: Genentech, Inc.
+Author-email: lal.avantika@gene.com
+License: MIT
+Project-URL: Documentation, https://genentech.github.io/regLM/
+Project-URL: Source, https://github.com/Genentech/regLM
+Platform: any
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown; charset=UTF-8; variant=GFM
+License-File: LICENSE.txt
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: torch<2.0
+Requires-Dist: torchmetrics
+Requires-Dist: pytorch-lightning<2.0
+Requires-Dist: bpnet-lite<0.6.0
+Requires-Dist: captum==0.5.0
+Requires-Dist: enformer_pytorch<0.8.7
+Provides-Extra: testing
+Requires-Dist: setuptools; extra == "testing"
+Requires-Dist: pytest; extra == "testing"
+Requires-Dist: pytest-cov; extra == "testing"
+
+
+# regLM
+regLM is a toolkit for training hyenaDNA-based autoregressive language models on DNA sequences and generating novel regulatory elements.
+
+![regLM schematic](fig1.png)
+
+## Documentation
+
+[Documentation](https://genentech.github.io/regLM)
+
+## Tutorials
+
+[Tutorials](tutorials)
+
+## Installation
+
+### 1. Install HyenaDNA
+To use regLM, first install HyenaDNA from GitHub following the instructions: https://github.com/HazyResearch/hyena-dna
+
+### 2. Install regLM
+```
+git clone https://github.com/Genentech/regLM.git
+cd regLM
+pip install .
+```
+
+## Preprint
+
+https://www.biorxiv.org/content/10.1101/2024.02.14.580373
+
+Code used to perform the experiments in the regLM paper, along with trained model weights and synthetic sequences, are available at [Zenodo](https://doi.org/10.5281/zenodo.10669334).

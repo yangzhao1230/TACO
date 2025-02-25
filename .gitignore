@@ -1,0 +1,27 @@
+# Checkpoints
+*.ckpt
+*.pt
+*.pth
+
+# Environments
+.env
+.venv
+env/
+venv/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Logs
+logs/
+*.log
+
+# OS specific
+.DS_Store
+
+# IDE specific
+.idea/
+.vscode/
+
+# flash-attention
+flash-attention/

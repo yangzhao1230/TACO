@@ -1,0 +1,13 @@
+numpy
+pandas
+torch<2.0
+torchmetrics
+pytorch-lightning<2.0
+bpnet-lite<0.6.0
+captum==0.5.0
+enformer_pytorch<0.8.7
+
+[testing]
+setuptools
+pytest
+pytest-cov
