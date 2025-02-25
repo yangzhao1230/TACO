@@ -19,6 +19,15 @@ logs/
 # OS specific
 .DS_Store
 
+# Ignore compiled Python files
+*.pyc
+*.pyo
+__pycache__/
+
 # IDE specific
 .idea/
 .vscode/
+
+data/
+reward_dict/
+*results*/
