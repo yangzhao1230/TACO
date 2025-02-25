@@ -1,6 +1,6 @@
 # Install PyTorch and related packages
-pip install torch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 --index-url https://download.pytorch.org/whl/cu121
-
+# pip install torch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 --index-url https://download.pytorch.org/whl/cu121
+pip install torch==1.13.1+cu117 torchvision==0.14.1+cu117 torchaudio==0.13.1 --extra-index-url https://download.pytorch.org/whl/cu117
 # Clone and install Flash Attention
 git clone https://github.com/Dao-AILab/flash-attention.git
 pip install flash-attn --no-build-isolation
@@ -25,3 +25,4 @@ pip install pandas
 pip install fuzzywuzzy
 pip install scikit-learn
 pip install wandb
+pip install hydra-core

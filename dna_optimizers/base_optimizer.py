@@ -122,7 +122,7 @@ class BaseOptimizer:
         
         if cfg.wandb_log:
             wandb.init(
-                project="HyenaRL_Backup",
+                project="TACO",
                 name=cfg.wandb_run_name,
             )
 
