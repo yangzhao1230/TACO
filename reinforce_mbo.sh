@@ -4,7 +4,7 @@ export WANDB_API_KEY=0e54236b9b51e012ca75d44fff1569c424ddc9da
 export WANDB_PROJECT=TACO
 export WANDB_DIR="~/wandb_cache"
 
-tasks=("k562")
+tasks=("hepg2")
 seeds=(0 1 2 3 4)
 # tfbs_lambdas=(0 0.1 0.5 1.0 5 10)
 

@@ -66,7 +66,7 @@ def set_seed(seed):
     torch.cuda.manual_seed(seed)
     
 def main():
-
+    import debugpy; debugpy.connect(5678); debugpy.wait_for_client(); debugpy.breakpoint()
     optimizer_args = parse_args()
     get_model_name_or_path
     
