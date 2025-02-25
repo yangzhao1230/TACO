@@ -22,6 +22,3 @@ logs/
 # IDE specific
 .idea/
 .vscode/
-
-# flash-attention
-flash-attention/
