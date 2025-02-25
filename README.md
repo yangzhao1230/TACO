@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Regulatory DNA sequence design with reinforcement learning
 
 Official implementation for the ICLR 2025 poster paper ["Regulatory DNA sequence design with reinforcement learning"](https://openreview.net/forum?id=F4IMiNhim1).
@@ -14,3 +15,10 @@ conda create -n taco python==3.9
 conda activate taco
 
 然后执行env_install.sh
+=======
+# Regulatory DNA Sequence Design with Reinforcement Learning
+
+Official implementation of the paper: "Regulatory DNA Sequence Design with Reinforcement Learning."
+
+This repository provides the code for implementing the method presented in the paper. Stay tuned for further updates as the camera-ready version and code will be available soon.
+>>>>>>> 5b9ff34ef1393d7293ca43e52704be558a77687c
