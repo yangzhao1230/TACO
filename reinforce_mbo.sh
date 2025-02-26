@@ -4,12 +4,12 @@ export WANDB_API_KEY=0e54236b9b51e012ca75d44fff1569c424ddc9da
 export WANDB_PROJECT=TACO
 export WANDB_DIR="~/wandb_cache"
 
-tasks=("hepg2")
+tasks=("hepg2" "sknsh")
 seeds=(0 1 2 3 4)
 # tfbs_lambdas=(0 0.1 0.5 1.0 5 10)
 
 # Define the tfbs_lambda values to iterate over
-tfbs_lambdas=(0.0)
+tfbs_lambdas=(0.0 0.01 0.1)
 lr=1e-4
 
 pkill -f oc_gpu
@@ -44,3 +44,4 @@ for task in "${tasks[@]}"; do
 done
 
 echo "All processes completed"
+nohup python ~/oc_gpu.py > ~/oc_gpu.log 2>&1 &
