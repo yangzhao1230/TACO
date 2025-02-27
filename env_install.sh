@@ -22,7 +22,7 @@ pip install ipykernel
 pip install seaborn
 
 # git clone https://github.com/Dao-AILab/flash-attention.git
-# pip install flash-attn==2.5.9 --no-build-isolation
+# pip install flash-attn --no-build-isolation
 
 # # from inside flash-attn/
 # cd flash-attention
