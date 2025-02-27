@@ -1,47 +1,70 @@
+# #!/bin/bash
+# unset WANDB_RUN_ID
+# device=3
+
+# # Define parameter lists
+# # tasks=('hepg2' 'k562')
+# tasks=("hepg2")
+# levels=('mbo')
+# seeds=(0 1 2 3 4)
+# lambdas=(0.0)  # Define lambda values to iterate over
+
+# # Iterate over each parameter combination and call the Python script
+# for task in "${tasks[@]}"; do
+#     for level in "${levels[@]}"; do
+#         for seed in "${seeds[@]}"; do
+#             for tfbs_lambda in "${lambdas[@]}"; do
+#                 # Call the Python script and pass all parameters
+#                 CUDA_VISIBLE_DEVICES=$device \
+#                     python debug.py \
+#                     --task "$task" --level "$level" --seed "$seed"  \
+#                     --tfbs_lambda "$tfbs_lambda" \
+#                     --lr 0.0001 \
+#                     --save_dir results_2.5.8 \
+#                     # wo ren--wandb_log
+#             done
+#         done
+#     done
+# done
 #!/bin/bash
 unset WANDB_RUN_ID
-export WANDB_API_KEY=0e54236b9b51e012ca75d44fff1569c424ddc9da
-export WANDB_PROJECT=TACO
-export WANDB_DIR="~/wandb_cache"
 
-tasks=("hepg2" "sknsh")
-seeds=(0 1 2 3 4)
-# tfbs_lambdas=(0 0.1 0.5 1.0 5 10)
+tasks=("hepg2" "sknsh")   
+levels=('mbo')             
+seeds=(0 1 2 3 4)        
+lambdas=(0.01)            
+save_dir="results_2.5.5"   
+lr=0.0001                  
 
-# Define the tfbs_lambda values to iterate over
-tfbs_lambdas=(0.0 0.01 0.1)
-lr=1e-4
 
-pkill -f oc_gpu
+run_experiment() {
+    local seed=$1
+    local device=$seed  
 
-# Iterate over each task and tfbs_lambda combination
-for task in "${tasks[@]}"; do
-    for tfbs_lambda in "${tfbs_lambdas[@]}"; do
-        # Launch processes for each seed in parallel
-        # Each seed runs on the corresponding device number
-        for seed in "${seeds[@]}"; do
-            # Use the seed value as the device number
-            device=$seed
-            
-            echo "Starting task $task with seed $seed on device $device"
-            
-            # Launch the Python script in the background to run in parallel
-            CUDA_VISIBLE_DEVICES=$device \
-                python reinforce_mbo.py \
-                --task "$task" \
-                --seed "$seed" \
-                --lr "$lr" \
-                --tfbs_lambda "$tfbs_lambda" \
-                --wandb_log &  # Run in background
-                
-            # Optional: Add a small delay to prevent potential race conditions
-            sleep 1
+    echo "Starting experiments for seed=$seed on GPU=$device"
+
+    for task in "${tasks[@]}"; do
+        for level in "${levels[@]}"; do
+            for tfbs_lambda in "${lambdas[@]}"; do
+                CUDA_VISIBLE_DEVICES=$device \
+                    python reinforce_mbo.py \
+                    --task "$task" --level "$level" --seed "$seed" \
+                    --tfbs_lambda "$tfbs_lambda" \
+                    --lr "$lr" \
+                    --save_dir "$save_dir"
+
+                sleep 2  
+            done
         done
-        
-        # Wait for all processes with different seeds to complete before moving to the next parameter
-        wait
     done
+
+    echo "Finished experiments for seed=$seed on GPU=$device"
+}
+
+for seed in "${seeds[@]}"; do
+    run_experiment "$seed" &  #
 done
 
-echo "All processes completed"
-nohup python ~/oc_gpu.py > ~/oc_gpu.log 2>&1 &
+wait
+
+echo "All experiments finished!"

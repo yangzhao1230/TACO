@@ -1,24 +1,20 @@
-<<<<<<< HEAD
-# Regulatory DNA sequence design with reinforcement learning
-
-Official implementation for the ICLR 2025 poster paper ["Regulatory DNA sequence design with reinforcement learning"](https://openreview.net/forum?id=F4IMiNhim1).
-
-This repository provides:
-1. Implementation of TBFS award inference.
-2. Implementation of our core algorithm TACO.
-
-## Environment
-
-首先安装一个conda虚拟环境并激活
-```bash
-conda create -n taco python==3.9
-conda activate taco
-
-然后执行env_install.sh
-=======
 # Regulatory DNA Sequence Design with Reinforcement Learning
 
-Official implementation of the paper: "Regulatory DNA Sequence Design with Reinforcement Learning."
+This repository provides the official implementation for the **ICLR 2025** poster paper:  
+["Regulatory DNA Sequence Design with Reinforcement Learning"](https://openreview.net/forum?id=F4IMiNhim1).
 
-This repository provides the code for implementing the method presented in the paper. Stay tuned for further updates as the camera-ready version and code will be available soon.
->>>>>>> 5b9ff34ef1393d7293ca43e52704be558a77687c
+## **Overview**  
+This repository contains:  
+1. **Implementation of TBFS award inference.**  
+2. **Implementation of our core algorithm, TACO.**  
+
+We will continue to update this repository as the **camera-ready version and code** become available.  
+
+## **Setup & Installation**  
+
+### **1️⃣ Create and Activate a Conda Virtual Environment**  
+Before running the code, create and activate a Conda environment:  
+
+```bash
+conda create -n taco python=3.9
+conda activate taco

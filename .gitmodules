@@ -1,3 +1,0 @@
-[submodule "flash-attention"]
-	path = flash-attention
-	url = https://github.com/Dao-AILab/flash-attention.git
