@@ -1,7 +1,7 @@
 # Regulatory DNA Sequence Design with Reinforcement Learning
 
 This repository provides the official implementation for the ICLR 2025 poster paper:  
-["Regulatory DNA Sequence Design with Reinforcement Learning"](https://openreview.net/forum?id=F4IMiNhim1).
+["Regulatory DNA Sequence Design with Reinforcement Learning"](https://openreview.net/pdf?id=F4IMiNhim1).
 
 ## Environment Setup
 
