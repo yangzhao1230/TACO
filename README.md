@@ -17,7 +17,7 @@ To install all necessary dependencies, run:
 ```bash
 bash env_install.sh
 ```
-Recently, we found that different versions of FlashAttention can lead to variations in results, possibly related to the implementation of HyenaDNA. Specifically, even with the same model weights, inference may produce slightly different intermediate outputs, which could result in a 1-2 point variation in the final evaluation metric. Unfortunately, we did not record the exact version of FlashAttention during the ICLR submission period. We are currently working to reproduce and diagnose this issue.
+
 
 To install FlashAttention, run:
 
@@ -30,9 +30,19 @@ cd flash-attention
 cd csrc/layer_norm && pip install .
 ```
 
+**Note:** We recently observed that variations in FlashAttention versions may cause slight differences in results, potentially due to interactions with HyenaDNA. Specifically, even using identical model weights, inference might yield slightly different intermediate outputs, leading to about 1–2 points variation in the final evaluation metric. Unfortunately, we did not record the exact FlashAttention version during the ICLR submission period (and the development machine from that period has since been recycled). We are actively working to reproduce and investigate this issue.
+
+
 ---
 
-## TFFBS Inference
+## Data Preparation
+
+Our data preprocessing scripts are mainly adapted from **[regLM](https://github.com/Genentech/regLM)**, with additional processing steps for extracting TFBS features. Here, we provide scripts for TFBS feature extraction along with our processed data. You can integrate your own data splits and customize the pipeline based on the original regLM scripts.
+
+TBD
+
+## TFBS Reward Inference
+
 TBD
 
 ---
@@ -51,11 +61,19 @@ bash reinforce_mbo.sh
 ---
 
 ## Acknowledgements
-Our implementation is based on **regLM, LatProtRL, and ChemformerRL**.  
-We sincerely appreciate their contributions!
+Our implementation is based on **[regLM](https://github.com/Genentech/regLM)**, **[LatProtRL](https://github.com/haewonc/LatProtRL)**, and **[RL4Chem](https://github.com/montrealrobotics/RL4Chem)**.  
+We sincerely appreciate their valuable contributions.
 
 ---
 
 ## Citation
-TBD
-```
+If you use our code or find our work inspiring, please cite our paper:
+
+```bibtex
+@inproceedings{yang2025regulatory,
+  title={Regulatory DNA Sequence Design with Reinforcement Learning},
+  author={Zhao Yang and Bing Su and Chuan Cao and Ji-Rong Wen},
+  booktitle={The Thirteenth International Conference on Learning Representations},
+  year={2025},
+  url={https://openreview.net/forum?id=F4IMiNhim1}
+}
