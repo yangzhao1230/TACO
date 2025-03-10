@@ -30,8 +30,16 @@ cd flash-attention
 cd csrc/layer_norm && pip install .
 ```
 
-**Note:** We recently observed that variations in FlashAttention versions may cause slight differences in results, potentially due to interactions with HyenaDNA. Specifically, even using identical model weights, inference might yield slightly different intermediate outputs, leading to about 1–2 points variation in the final evaluation metric. Unfortunately, we did not record the exact FlashAttention version during the ICLR submission period (and the development machine from that period has since been recycled). We are actively working to reproduce and investigate this issue.
+**Note:** We have recently observed that variations in FlashAttention versions may lead to slight differences in results, potentially due to interactions with HyenaDNA. Specifically, even when using identical model weights, inference can produce slightly different intermediate outputs (for example, we found that a sample had identical output bases until position 131, but diverged from position 132 onward compared to our previous experimental results), resulting in approximately 1-2 point variations in the final evaluation metrics. Unfortunately, we did not document the exact FlashAttention version used during the ICLR submission period (and the development machine from that time has since been recycled). We are actively working to reproduce and investigate this issue. The table below presents our reproduction results from February 2025 as shown in calculate_metric.ipynb: 
 
+
+| SK-N-SH Results | Results in the paper |  |  |
+|-----------------|----------------------|----------------------|----------------------|
+|                 | Top                  | Medium               | Diversity            |
+| alpha = 0.0 (Paper reported)  | 0.67 ± 0.06          | 0.60 ± 0.06          | 111.6 ± 12.86        |
+| alpha = 0.01 (Paper reported)    | 0.68 ± 0.08          | 0.62 ± 0.08          | 121.4 ± 7.86         |
+| alpha = 0.0 (Latest reproduction) | 0.68 ± 0.07      | 0.62 ± 0.07          | 120.2 ± 13.85        |
+| alpha = 0.01 (Latest reproduction)     | 0.7 ± 0.03           | 0.63 ± 0.04          | 117.2 ± 12.64        |
 
 ---
 
