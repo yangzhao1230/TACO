@@ -30,7 +30,7 @@ cd flash-attention
 cd csrc/layer_norm && pip install .
 ```
 
-**Note:** We have recently observed that variations in FlashAttention versions may lead to slight differences in results, potentially due to interactions with HyenaDNA. Specifically, even when using identical model weights, inference can produce slightly different intermediate outputs (for example, we found that a sample had identical output bases until position 131, but diverged from position 132 onward compared to our previous experimental results), resulting in approximately 1-2 point variations in the final evaluation metrics. Unfortunately, we did not document the exact FlashAttention version used during the ICLR submission period (and the development machine from that time has since been recycled). We are actively working to reproduce and investigate this issue. The table below presents our reproduction results from February 2025 as shown in calculate_metric.ipynb: 
+**Note:** We have recently observed that variations in FlashAttention versions may lead to slight differences in results, potentially due to interactions with HyenaDNA. Specifically, even when using identical model weights, inference can produce slightly different intermediate outputs (for example, we found that a sample had identical output bases until position 131, but diverged from position 132 onward compared to our previous experimental results), resulting in approximately 1-2 point variations in the final evaluation metrics. Unfortunately, we did not document the exact FlashAttention version used during the ICLR submission period (and the development machine from that time has since been recycled). We are actively working to reproduce and investigate this issue. The table below presents our reproduction results from February 2025 as shown in 'calculate_metric'.ipynb: 
 
 
 | SK-N-SH Results |                      |  |  |
@@ -69,8 +69,13 @@ bash reinforce_mbo.sh
 ---
 
 ## Acknowledgements
-Our implementation is based on **[regLM](https://github.com/Genentech/regLM)**, **[LatProtRL](https://github.com/haewonc/LatProtRL)**, and **[RL4Chem](https://github.com/montrealrobotics/RL4Chem)**.  
-We sincerely appreciate their valuable contributions.
+
+Our implementation builds upon several open-source projects:
+- **[regLM](https://github.com/Genentech/regLM)**: Provided the implementation of our policy
+- **[LatProtRL](https://github.com/haewonc/LatProtRL)**: Contributed baseline implementations and evaluation code
+- **[RL4Chem](https://github.com/montrealrobotics/RL4Chem)**: Supplied the reinforcement learning algorithmic framework
+
+We sincerely appreciate their valuable contributions to this work.
 
 ---
 
