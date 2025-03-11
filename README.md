@@ -74,6 +74,18 @@ We sincerely appreciate their valuable contributions.
 
 ---
 
+## TODO List
+<ul>
+   <li><input type="checkbox" checked> Provide environment configuration instructions.</li>
+   <li><input type="checkbox" checked> Provide core algorithm code implementation.</li>
+   <li><input type="checkbox"> Replace all absolute paths in the repo and provide appropriate path instructions.</li>
+   <li><input type="checkbox"> Provide checkpoints for pre-trained policy, surrogate, and oracle.</li>
+   <li><input type="checkbox"> Provide the construction diamagnetic for tbfs features.</li>
+   <li><input type="checkbox"> Provide code for tfbs reward inference.</li>
+</ul>
+
+---
+
 ## Citation
 If you use our code or find our work inspiring, please cite our paper:
 
