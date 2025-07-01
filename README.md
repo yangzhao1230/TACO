@@ -83,8 +83,8 @@ We sincerely appreciate their valuable contributions to this work.
 - [x] Provide environment configuration instructions.
 - [x] Provide core algorithm code implementation.
 - [ ] Replace all absolute paths in the repo and provide appropriate path instructions.
-- [ ] Provide checkpoints for pre-trained policy, surrogate, and oracle.
-- [ ] Provide the construction diamagnetic for tbfs features.
+<!--  - [ ] Provide checkpoints for pre-trained policy, surrogate, and oracle. -->
+- [ ] Provide the construction scripts for tbfs features.
 - [ ] Provide code for tfbs reward inference.
 
 ---
