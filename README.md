@@ -75,7 +75,7 @@ bash reinforce_mbo.sh
 ## Acknowledgements
 
 Our implementation builds upon several open-source projects:
-- **[regLM](https://github.com/Genentech/regLM)**: Provided the implementation of our policy
+- **[regLM](https://github.com/Genentech/regLM)**: Provided the implementation of our policy, reward model, and data processing related code.
 - **[LatProtRL](https://github.com/haewonc/LatProtRL)**: Contributed baseline implementations and evaluation code
 - **[RL4Chem](https://github.com/montrealrobotics/RL4Chem)**: Supplied the reinforcement learning algorithmic framework
 
