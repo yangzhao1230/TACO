@@ -45,15 +45,19 @@ cd csrc/layer_norm && pip install .
 
 ## Data Preparation
 
-Our data preprocessing scripts are mainly adapted from **[regLM](https://github.com/Genentech/regLM)**, with additional processing steps for extracting TFBS features. Here, we provide scripts for TFBS feature extraction along with our processed data. You can integrate your own data splits and customize the pipeline based on the original regLM scripts.
+Our data preprocessing scripts are mainly adapted from regLM (https://zenodo.org/records/12668907).
 
-TBD
+In particular, if you want to enable TFBS features, you need to first scan and extract TFBS features from sequence data, which can also be found in regLM's code (https://zenodo.org/records/12668907). Briefly, you should save the TFBS feature matrix of interest and the corresponding fitness levels into an `h5ad` format file.
 
 ## TFBS Reward Inference
 
-TBD
+You should have extracted TFBS features and saved them in `h5ad` format (please refer to regLM's notebooks for this step).
 
----
+Then you can train the lightGBM model with 
+```
+python lightGBM_mbo.py
+```
+then you can infer the TFBS reward through `tfbs_reward_mbo.ipynb`.
 
 ## Optimization with RL
 
@@ -83,9 +87,9 @@ We sincerely appreciate their valuable contributions to this work.
 - [x] Provide environment configuration instructions.
 - [x] Provide core algorithm code implementation.
 - [ ] Replace all absolute paths in the repo and provide appropriate path instructions.
-<!--  - [ ] Provide checkpoints for pre-trained policy, surrogate, and oracle. -->
-- [ ] Provide the construction scripts for tbfs features.
-- [ ] Provide code for tfbs reward inference.
+- [ ] Provide checkpoints for pre-trained policy, surrogate, and oracle.
+- [x] Provide the construction scripts for tbfs features.
+- [x] Provide code for tfbs reward inference.
 
 ---
 
