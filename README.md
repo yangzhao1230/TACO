@@ -88,7 +88,7 @@ We sincerely appreciate their valuable contributions to this work.
 - [x] Provide core algorithm code implementation.
 - [ ] Replace all absolute paths in the repo and provide appropriate path instructions.
 - [ ] Provide checkpoints for pre-trained policy, surrogate, and oracle.
-- [x] Provide the construction scripts for tbfs features.
+- [x] Provide the training scripts for the LightGBM model.
 - [x] Provide code for tfbs reward inference.
 
 ---
