@@ -30,7 +30,7 @@ cd flash-attention
 cd csrc/layer_norm && pip install .
 ```
 
-**Note:** We have recently observed that variations in FlashAttention versions may lead to slight differences in results, potentially due to interactions with HyenaDNA. Specifically, even when using identical model weights, inference can produce slightly different intermediate outputs (for example, we found that a sample had identical output bases until position 131, but diverged from position 132 onward compared to our previous experimental results), resulting in approximately 1-2 point variations in the final evaluation metrics. Unfortunately, we did not document the exact FlashAttention version used during the ICLR submission period (and the development machine from that time has since been recycled). We are actively working to reproduce and investigate this issue. The table below presents our reproduction results from February 2025 as shown in 'calculate_metric'.ipynb: 
+**Note:** We have recently observed that variations in FlashAttention versions may lead to slight differences in results, potentially due to interactions with HyenaDNA. Specifically, even when using identical model weights, inference can produce slightly different intermediate outputs (for example, we found that a sample had identical output bases until position 131, but diverged from position 132 onward compared to our previous experimental results), resulting in approximately 1-2 point variations in the final evaluation metrics. Unfortunately, we did not document the exact FlashAttention version used during the ICLR submission period (and the development machine from that time has since been recycled). We are actively working to reproduce and investigate this issue. The table below presents our reproduction results from February 2025 as shown in `calculate_metric.ipynb`: 
 
 
 |  |                      |  |  |
@@ -60,7 +60,7 @@ Our data preprocessing scripts and reward model training scripts are mainly adap
 ```
 You can find instructions for downloading datasets (and splitting them according to your specific needs) in `01_data_processing`, and learn how to train reward models in `02_regression_paired`.
 
-In particular, if you want to enable TFBS features, you need to first scan and extract TFBS features from sequence data (also in `01_data_processing`). Briefly, you should save the TFBS feature matrix of interest and the corresponding fitness levels into an `h5ad` format file.
+In particular, if you want to enable TFBS features, you need to first scan and extract TFBS features from sequence data (also in `01_data_processing`). Briefly, you should save the TFBS feature matrix of interest and the corresponding fitness levels into an `h5ad` format file. Regarding the related JASPAR files needed for scanning TFBS, please refer to https://github.com/yangzhao1230/TACO/issues/2.
 
 ## TFBS Reward Inference
 
@@ -74,7 +74,7 @@ then you can infer the TFBS reward through `tfbs_reward_mbo.ipynb`.
 
 ## Prepared Data, TFBS Reward and Reward Model
 
-Here we provide pre-processed TFBS rewards, surrogate scoring model weights (note that the policy directly uses HyenaDNA weights, and for oracle weights please use the reward model provided by regLM), and datasets partitioned according to the offline MBO strategy described in the paper.
+Here we provide pre-processed TFBS rewards, surrogate scoring model weights (note that the policy directly uses regLM weights, and for oracle weights please use the reward model provided by regLM), and datasets partitioned according to the offline MBO strategy described in the paper.
 
 **Model weights:** https://huggingface.co/yangyz1230/TACO/tree/main  
 **Datasets:** https://huggingface.co/datasets/yangyz1230/TACO/tree/main
