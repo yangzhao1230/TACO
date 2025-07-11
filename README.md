@@ -76,8 +76,9 @@ then you can infer the TFBS reward through `tfbs_reward_mbo.ipynb`.
 
 Here we provide pre-processed TFBS rewards, surrogate scoring model weights (note that the policy directly uses regLM weights, and for oracle weights please use the reward model provided by regLM), and datasets partitioned according to the offline MBO strategy described in the paper.
 
-**Model weights:** https://huggingface.co/yangyz1230/TACO/tree/main  
-**Datasets:** https://huggingface.co/datasets/yangyz1230/TACO/tree/main
+
+🤗**Model weights:** https://huggingface.co/yangyz1230/TACO/tree/main  
+🤗**Datasets:** https://huggingface.co/datasets/yangyz1230/TACO/tree/main
 
 ## Optimization with RL
 
