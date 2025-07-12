@@ -82,7 +82,7 @@ Here we provide pre-processed TFBS rewards, surrogate scoring model weights (not
 
 ## Optimization with RL
 
-We provide only the inference script for **offline MBO (Section 4.3)** in the paper.  
+We provide only the optimization script for **offline MBO (Section 4.3)** in the paper.  
 However, the implementations of **Section 4.2 and Section 4.3** are **identical**, except for differences in the **reward model, pre-trained model, and dataset**.
 
 To run inference for offline MBO, use:
